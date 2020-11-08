@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyThreading</string>
+    <string name="start_button">Старт</string>
+    <string name="pause_button">Пауза</string>
+    <string name="stop_button">Стоп</string>
+</resources>
