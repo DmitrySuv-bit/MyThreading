@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit
 class MainActivity : AppCompatActivity() {
     private companion object {
         const val COUNT_KEY = "com.speedometer_view.count"
+        const val TIMER_INTERVAL = 1000L
     }
 
     private var count: Int = 0
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createTimer(): Thread {
         return Thread {
-            Thread.sleep(1000)
+            Thread.sleep(TIMER_INTERVAL)
 
             while (isStartedTimer) {
                 ++count
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                     timerText.text = count.toString()
                 }
 
-                Thread.sleep(1000)
+                Thread.sleep(TIMER_INTERVAL)
             }
         }
     }
