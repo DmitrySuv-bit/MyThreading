@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private companion object {
         const val COUNT_KEY = "com.speedometer_view.count"
         const val TIMER_INTERVAL = 1000L
+        const val WORKER_INITIAL_DELAY = 10L
     }
 
     private var count: Int = 0
@@ -86,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val request = OneTimeWorkRequestBuilder<MyWorker>()
-            .setInitialDelay(10, TimeUnit.SECONDS)
+            .setInitialDelay(WORKER_INITIAL_DELAY, TimeUnit.SECONDS)
             .setInputData(dataWork)
             .build()
 
